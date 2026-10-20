@@ -143,7 +143,7 @@ if(running){for(let k=0;k<3;k++){c.fillStyle=`rgba(250,232,196,${.24-k*.06})`;c.
 // actual horse emoji silhouette + custom numbered colored saddle
 c.save();c.translate(25,0);c.scale(-1,1);text('🐎',-27,8,'48px "Segoe UI Emoji","Apple Color Emoji",sans-serif','#553b34');c.restore();
 c.save();c.translate(-2,-12);c.rotate(-.06);rounded(-13,-6,28,19,5,h.color);c.strokeStyle='#fff8ee';c.lineWidth=2;c.strokeRect(-11,-4,24,15);text(String(h.index+1),1,8,'bold 13px sans-serif','#fff','center');c.restore();
-if(size>=34){rounded(-48,-54,96,23,8,'rgba(255,255,255,.93)');text(h.name.length>9?h.name.slice(0,8)+'…':h.name,0,-38,'bold 12px sans-serif','#3c2b44','center')}
+
 c.restore()}
 function draw(){const now=performance.now();c.clearRect(0,0,W,H);
 // sky gradient
@@ -170,7 +170,16 @@ text('🏁 FINISH →',Math.min(W-125,fx+6),277,'bold 17px sans-serif','#744e59'
 const ordered=[...horses].sort((a,b)=>a.index-b.index),count=ordered.length;
 const shown=count<=16?ordered:ordered.filter(h=>Math.abs(trackX(h.x)-W*.5)<W*.85).slice(0,55);
 shown.sort((a,b)=>(a.index%12)-(b.index%12));
-for(const h of shown){const lane=h.index%12,group=Math.floor(h.index/12);const y=310+lane*17+(group%3)*3;const depth=.65+lane*.034;const x=trackX(h.x)-group*5;if(x<-90||x>W+80)continue;horse(h,x,y,48*depth,now)}
+const visibleHorseLabels=[];
+for(const h of shown){const lane=h.index%12,group=Math.floor(h.index/12);const y=310+lane*17+(group%3)*3;const depth=.65+lane*.034;const x=trackX(h.x)-group*5;if(x<-90||x>W+80)continue;horse(h,x,y,48*depth,now);visibleHorseLabels.push({h,x,y})}
+// Draw names after all horses, in screen coordinates, at a fixed readable size.
+for(const {h,x,y} of visibleHorseLabels){
+ const label=h.name.length>13?h.name.slice(0,12)+'…':h.name;
+ c.font='bold 14px sans-serif';const labelWidth=Math.min(174,Math.max(54,c.measureText(label).width+20));
+ const lx=Math.max(labelWidth/2+3,Math.min(W-labelWidth/2-3,x));
+ rounded(lx-labelWidth/2,y-44,labelWidth,21,7,'rgba(255,255,255,.96)');
+ text(label,lx,y-29,'bold 14px sans-serif','#34243c','center');
+}
 // broadcast HUD
 rounded(16,13,405,64,15,'rgba(47,42,72,.86)');text('🏇  MEOW HORSE RACE  ·  경마',32,40,'bold 21px sans-serif','#fff');text(`🐎 ${horses.length}마리 출전  |  ${running?'LIVE ●':'READY'}  |  카메라 ${zoom.toFixed(2)}×`,32,62,'bold 13px sans-serif','#ffe2ec');
 rounded(W-212,14,196,60,13,'rgba(47,42,72,.84)');const lead=[...horses].sort((a,b)=>b.x-a.x)[0];text('🏆 CURRENT LEADER',W-199,36,'bold 12px sans-serif','#f7d5eb');text(lead?(lead.name.length>13?lead.name.slice(0,12)+'…':lead.name):'대기 중',W-199,59,'bold 16px sans-serif','#fff');
