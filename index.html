@@ -49,14 +49,17 @@
 
 /* ladder */
 .ladder-intro{margin:18px 0 14px;display:flex;gap:16px;align-items:center}.ladder-intro img{width:76px;height:76px;object-fit:cover;border-radius:20px}.ladder-intro strong{font-size:22px;color:#8b4d8e}.ladder-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}.ladder-inputs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.ladder-inputs label{display:flex;flex-direction:column;gap:8px;font-weight:800;color:#754c7d}.ladder-inputs textarea{width:100%;min-height:148px;resize:vertical;border:2px solid #e9d4f4;border-radius:14px;padding:13px;background:#fff;color:#4b3753;font:inherit;line-height:1.65}.ladder-tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:16px 0}.ladder-tools button{border-radius:12px;padding:12px 15px;border:0;cursor:pointer;font-weight:800;background:#f3e6fa;color:#72477c}.ladder-tools .ladder-main{background:linear-gradient(120deg,#f4a5d1,#bfa9fa);color:#42274c}.ladder-tools select{border-radius:10px;padding:9px;background:white;border:1px solid #d9bce9}.ladder-stage{border-radius:20px;background:linear-gradient(165deg,#fff9fd,#f4f3ff);border:2px solid #f1dff5;padding:16px;overflow:hidden}.ladder-scroll{overflow-x:auto;max-width:100%;padding-bottom:8px}.ladder-scroll svg{display:block;margin:auto;max-width:none}.ladder-hint{font-size:13px;color:#866c8b}.ladder-message{padding:12px 14px;border-radius:12px;background:#fff0f8;color:#87447b;font-weight:800;margin:12px 0;min-height:46px}.ladder-tools button:disabled{opacity:.5;cursor:not-allowed}@media(max-width:600px){.ladder-inputs{grid-template-columns:1fr}.ladder-intro img{width:60px;height:60px}.ladder-tools button{flex:1}}
-</style></head><body><main class="wrap"><header class="hero"><div class="hero-photo" role="img" aria-label="파란 눈과 검은 머리의 먀오 캐릭터"></div><div class="hero-overlay"><span class="eyebrow">✦ MEOW'S FOOD PICKER ✦</span><h1>먀오의 머먹지? ♡</h1><p>오늘의 메뉴는 먀오에게 맡겨줘!<br>또로록~ 운명의 한 끼를 뽑아봐 ✨</p><div class="hero-badge">🐾 고민은 먀오가 할게!</div></div></header><nav class="mode-tabs" aria-label="룰렛 종류"><button type="button" class="mode-tab active" id="tabFood" aria-selected="true">🍚 메뉴추천</button><button type="button" class="mode-tab" id="tabWeird" aria-selected="false">🎯 원형룰렛</button><button type="button" class="mode-tab" id="tabRace" aria-selected="false">🏇 경마</button><button type="button" class="mode-tab" id="tabKuji" aria-selected="false">🎟️ 쿠지판 뽑기</button><button type="button" class="mode-tab" id="tabLadder" aria-selected="false">🪜 사다리타기</button></nav><div class="mode-page" id="foodPage"><div class="myao-intro"><img src="myao-3.webp" alt="흰색 옷을 입고 윙크하는 먀오" loading="lazy"><div><strong>먀오의 오늘의 추천 ♡</strong><p>먹고 싶은 메뉴가 너무 많아? 아래 버튼을 눌러봐!<br>한식부터 간편식까지 골라줄게.</p></div></div><section class="panel picker"><div class="muted" id="poolInfo">메뉴 준비 중</div><div class="window" aria-label="랜덤 음식 선택 화면"><div class="focus-line"></div><div class="track" id="track"><div class="slot"><span class="emoji">🍚</span>오늘 뭐 먹지?</div></div></div><button class="primary" id="spin">🐾 먀오야, 골라줘!</button><p class="result" id="result" aria-live="polite">먀오가 추천할 메뉴는 무엇일까? ♡</p></section><div class="controls" id="filters" aria-label="음식 종류 선택"></div><section class="panel"><div class="heading"><h2>📋 메뉴 관리 <span id="count"></span></h2><div class="manage-actions"><button class="secondary" id="deleteAll" type="button">🗑 전체 메뉴 삭제</button><button class="secondary" id="reset" type="button">기본 메뉴 복원</button></div></div><p class="info">× 버튼으로 개별 삭제하거나 전체 메뉴 삭제 버튼으로 모든 메뉴를 지울 수 있어요. 원하는 음식은 직접 추가하세요. 변경한 메뉴는 이 브라우저에 자동 저장됩니다.</p><form class="row" id="addForm"><input id="newName" maxlength="35" placeholder="메뉴 이름 (예: 치즈닭갈비)" required aria-label="새 메뉴 이름"><select id="newCat" aria-label="메뉴 종류" style="border:1px solid #dfd4c8;border-radius:12px;padding:10px;font-size:16px"></select><button class="secondary">+ 추가</button></form><div class="row"><input id="search" placeholder="🔍 메뉴 검색" aria-label="메뉴 검색"><button class="secondary" id="clearFilter" type="button">전체 보기</button></div><p class="info" id="notice" role="status"></p><div class="grid" id="items"></div></section></div><div class="mode-page" id="weirdPage" hidden>
+
+/* pinball survival */
+.pinball-panel{background:linear-gradient(160deg,#fff8ff,#f5f1ff)}.pinball-top{display:flex;justify-content:space-between;gap:10px;font-weight:900;color:#8d4b9c;margin-bottom:12px}.pinball-panel canvas{display:block;width:100%;height:auto;max-height:75vh;object-fit:contain;border-radius:20px;background:#141027;border:3px solid #ead5f8;box-shadow:0 12px 32px #69558c33}.pinball-speed{display:flex;align-items:center;gap:7px;color:#87538d;font-weight:800}.pinball-speed select{padding:9px;border-radius:12px;border:1px solid #d7b5df}.pinball-board{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pinball-chip{background:#fff;border:1px solid #ecd5f3;border-radius:13px;padding:8px 11px;font-size:13px;font-weight:800;color:#664b7d}.pinball-chip b{color:#a34798}
+.pinball-panel{position:relative}.pinball-mini-panel{position:absolute;top:62px;left:23px;right:auto;width:138px;z-index:3;padding:9px 8px;border:1px solid #bcb0df;border-radius:13px;background:#16182eea;color:#fff;text-align:center;box-shadow:0 8px 24px #0006}.pinball-mini-title{font-size:11px;font-weight:900;margin-bottom:6px}.pinball-mini-panel canvas{width:100%;height:255px;max-height:none;object-fit:fill;border:1px solid #69728c;border-radius:8px;cursor:crosshair;box-shadow:none;background:#0e1221}.pinball-mini-panel button{width:100%;padding:7px 2px;margin-top:7px;font-size:10px;border-radius:8px}.pinball-mini-hint{font-size:10px;opacity:.75;margin-top:5px}@media(max-width:650px){.pinball-mini-panel{left:13px;right:auto;top:65px;width:104px;padding:5px}.pinball-mini-panel canvas{height:190px}.pinball-mini-title{font-size:9px}.pinball-mini-hint{font-size:8px}}</style></head><body><main class="wrap"><header class="hero"><div class="hero-photo" role="img" aria-label="파란 눈과 검은 머리의 먀오 캐릭터"></div><div class="hero-overlay"><span class="eyebrow">✦ MEOW'S FOOD PICKER ✦</span><h1>먀오의 머먹지? ♡</h1><p>오늘의 메뉴는 먀오에게 맡겨줘!<br>또로록~ 운명의 한 끼를 뽑아봐 ✨</p><div class="hero-badge">🐾 고민은 먀오가 할게!</div></div></header><nav class="mode-tabs" aria-label="룰렛 종류"><button type="button" class="mode-tab active" id="tabFood" aria-selected="true">🍚 메뉴추천</button><button type="button" class="mode-tab" id="tabWeird" aria-selected="false">🎯 원형룰렛</button><button type="button" class="mode-tab" id="tabRace" aria-selected="false">🏇 경마</button><button type="button" class="mode-tab" id="tabKuji" aria-selected="false">🎟️ 쿠지판 뽑기</button><button type="button" class="mode-tab" id="tabLadder" aria-selected="false">🪜 사다리타기</button><button type="button" class="mode-tab" id="tabPinball" aria-selected="false">🎱 핀볼</button></nav><div class="mode-page" id="foodPage"><div class="myao-intro"><img src="myao-3.webp" alt="흰색 옷을 입고 윙크하는 먀오" loading="lazy"><div><strong>먀오의 오늘의 추천 ♡</strong><p>먹고 싶은 메뉴가 너무 많아? 아래 버튼을 눌러봐!<br>한식부터 간편식까지 골라줄게.</p></div></div><section class="panel picker"><div class="muted" id="poolInfo">메뉴 준비 중</div><div class="window" aria-label="랜덤 음식 선택 화면"><div class="focus-line"></div><div class="track" id="track"><div class="slot"><span class="emoji">🍚</span>오늘 뭐 먹지?</div></div></div><button class="primary" id="spin">🐾 먀오야, 골라줘!</button><p class="result" id="result" aria-live="polite">먀오가 추천할 메뉴는 무엇일까? ♡</p></section><div class="controls" id="filters" aria-label="음식 종류 선택"></div><section class="panel"><div class="heading"><h2>📋 메뉴 관리 <span id="count"></span></h2><div class="manage-actions"><button class="secondary" id="deleteAll" type="button">🗑 전체 메뉴 삭제</button><button class="secondary" id="reset" type="button">기본 메뉴 복원</button></div></div><p class="info">× 버튼으로 개별 삭제하거나 전체 메뉴 삭제 버튼으로 모든 메뉴를 지울 수 있어요. 원하는 음식은 직접 추가하세요. 변경한 메뉴는 이 브라우저에 자동 저장됩니다.</p><form class="row" id="addForm"><input id="newName" maxlength="35" placeholder="메뉴 이름 (예: 치즈닭갈비)" required aria-label="새 메뉴 이름"><select id="newCat" aria-label="메뉴 종류" style="border:1px solid #dfd4c8;border-radius:12px;padding:10px;font-size:16px"></select><button class="secondary">+ 추가</button></form><div class="row"><input id="search" placeholder="🔍 메뉴 검색" aria-label="메뉴 검색"><button class="secondary" id="clearFilter" type="button">전체 보기</button></div><p class="info" id="notice" role="status"></p><div class="grid" id="items"></div></section></div><div class="mode-page" id="weirdPage" hidden>
 <div class="weird-intro"><img src="myao-3.webp" alt="먀오"><div><strong>🎰 먀옹이의 메뉴추천</strong><p>메뉴를 직접 추가하고, 중복 티켓이 많을수록 당첨 확률이 높아지는 원형 룰렛!</p></div></div>
 <div class="weird-layout"><section class="panel weird-wheel-box"><div class="muted" id="weirdPoolInfo">원형룰렛 준비 중</div><div class="weird-wheel-wrap"><div class="weird-pointer" aria-hidden="true"></div><canvas id="weirdCanvas" width="720" height="720" role="img" aria-label="메뉴 원형 룰렛"></canvas><div class="weird-wheel-center" aria-hidden="true"></div></div><button class="primary" id="weirdSpin" type="button">🎲 원형룰렛 돌리기!</button><p class="weird-result" id="weirdResult" aria-live="polite">과연 어떤 메뉴가 당첨될까? 🐾</p><p class="weird-help">룰렛의 각 영역 크기는 티켓 수에 비례합니다. 화살표가 가리키는 메뉴가 당첨돼요.</p></section>
 <section class="panel"><div class="heading"><h2>🧪 메뉴 관리</h2><button class="secondary" id="weirdClearAll" type="button">🗑 전체 메뉴 삭제</button></div><p class="info">같은 이름을 추가하면 티켓이 누적돼요. 티켓이 많을수록 당첨 확률이 높아집니다. 일반 메뉴 추천 목록과 별도로 저장돼요.</p><div class="bulk-add"><h3>📋 여러 메뉴 한 번에 추가</h3><p class="bulk-hint">한 줄에 메뉴 하나씩 입력하거나 쉼표(,)로 구분해 붙여넣으세요.<br>예: <b>민트초코 라면 x2</b> / <b>김치 아이스크림 x5</b> / <b>콜라 국밥</b><br>같은 이름은 자동 합산되며, <b>×숫자</b>가 없으면 1장씩 추가돼요.</p><textarea id="weirdBulkInput" placeholder="민트초코 라면 x2&#10;김치 아이스크림 x5&#10;콜라 국밥&#10;딸기잼 짜장면 x3" aria-label="여러 메뉴를 한 번에 입력"></textarea><div class="bulk-controls"><button class="secondary" id="weirdBulkAdd" type="button">📥 전체 항목 한 번에 추가</button><button class="secondary" id="weirdBulkClear" type="button">입력창 비우기</button><span id="weirdBulkPreview" class="bulk-preview" aria-live="polite">여러 줄을 붙여넣어 보세요.</span></div><div id="weirdBulkError" class="bulk-error" role="status"></div></div><div class="weird-stats" id="weirdStats"></div><div class="weird-entries" id="weirdEntries"></div><p class="info" id="weirdNotice" role="status"></p></section></div>
 </div><div class="mode-page" id="racePage" hidden><div class="weird-intro"><img src="myao-1.webp" alt="먀오"><div><strong>🏇 MEOW HORSE RACE · 경마</strong><p>알록달록한 안장을 단 말들이 입체 경마장을 달려요! 관중석과 트랙이 움직이고, 카메라가 선두권을 따라갑니다. 랜덤 스킬 없이 순수한 확률 경주!</p></div></div><div class="race-layout"><section class="panel race-panel"><div class="race-head"><span id="raceInfo">메뉴를 등록해 주세요</span><span id="raceClock">READY</span></div><canvas id="raceCanvas" width="960" height="580" aria-label="입체감 있는 말 경주 화면"></canvas><div class="race-buttons"><button type="button" class="primary" id="raceStart">🏇 경주 시작!</button><button type="button" class="secondary" id="raceZoomOut">− 축소</button><button type="button" class="secondary" id="raceZoomIn">+ 확대</button><button type="button" class="secondary" id="raceFollow">🎥 선두 추적 ON</button></div><div class="race-events" id="raceEvent" aria-live="polite">메뉴추천 탭에 메뉴를 등록하면 경주에 참가할 수 있어요.</div><p class="weird-result" id="raceResult" aria-live="polite">어떤 메뉴가 우승할까? 🏆</p><p class="info">메뉴별 안장색과 번호로 구분합니다. 당첨은 티켓 비율에 따른 가중 추첨이며, 경주 중 추월과 역전은 결과를 마지막까지 감춘 애니메이션입니다. 낮은 확률의 메뉴도 우승할 수 있어요.</p></section><section class="panel"><h2>🏆 실시간 순위 · 당첨 확률</h2><div class="race-rank" id="raceRank"></div><p class="info">전체 메뉴가 출전하고 선두권 중심으로 카메라가 움직입니다. 화면 아래에는 트랙 진행도와 현재 선두가 표시됩니다.</p><button type="button" class="secondary" id="raceGoWeird">🎰 메뉴 관리 →</button></section></div></div><div class="mode-page" id="kujiPage" hidden>
 <div class="weird-intro"><img src="myao-3.webp" alt="먀오"><div><strong>🎟️ 먀오의 비밀 쿠지판</strong><p>등록된 메뉴 수만큼 비밀 쿠지가 만들어져요. 어떤 음식이 숨어 있는지는 뽑기 전까지 비밀! ♡</p></div></div>
 <section class="panel kuji-panel"><div class="kuji-top"><div><h2>🎁 SECRET MENU PICK</h2><p class="info" id="kujiInfo">쿠지판을 준비하고 있어요.</p></div><div class="kuji-controls"><label class="kuji-shuffle-label" for="kujiShuffleCount">섞는 횟수 <select id="kujiShuffleCount" aria-label="쿠지판 섞는 횟수"><option value="1">1회</option><option value="3" selected>3회</option><option value="5">5회</option><option value="10">10회</option></select></label><button type="button" class="primary" id="kujiReset">🔀 쿠지판 섞기</button><button type="button" class="secondary" id="kujiGoWeird">+ 메뉴 등록</button></div></div><div class="kuji-status" id="kujiStatus" aria-live="polite">마음에 드는 번호를 골라봐!</div><div class="kuji-grid" id="kujiGrid"></div><p class="info">메뉴 1종당 쿠지 1장씩 만들어집니다. 이 게임에서는 티켓 수가 아닌 등록 메뉴 수를 기준으로 뽑아요. 이미 뽑은 쿠지는 다시 열 수 있고, 새 쿠지판을 섞으면 모두 비공개로 돌아갑니다.</p></section>
-</div><div class="mode-page" id="ladderPage" hidden>
+</div><div class="mode-page" id="pinballPage" hidden><div class="weird-intro"><img src="myao-4.webp" alt="먀오"><div><strong>🎱 먀오의 대역전 핀볼</strong><p>세 개의 회전 장애물과 출구 회전봉! 마지막까지 순서가 뒤집히는 핀볼 ♡</p></div></div><section class="panel pinball-panel"><div class="pinball-top"><span id="pinballInfo">공 준비 중</span><span id="pinballStatus">READY</span></div><canvas id="pinballCanvas" width="1000" height="760" aria-label="랜덤 장애물 낙하형 핀볼"></canvas><div class="pinball-mini-panel"><div class="pinball-mini-title">🗺️ 전체 코스 · 클릭해서 이동</div><canvas id="pinballMini" width="220" height="440" aria-label="핀볼 전체 코스 미니맵, 클릭하면 해당 구간으로 이동"></canvas><button class="secondary" type="button" id="pinballAutoCamera">🎥 자동 추적 켜짐</button><div class="pinball-mini-hint">점: 생존 공 · 테두리: 현재 화면</div></div><div class="race-buttons"><button class="primary" id="pinballStart" type="button">🎱 공 투입 · 시작!</button><button class="secondary" id="pinballReset" type="button">↻ 초기화</button><label class="pinball-speed">우승 기준 <select id="pinballWinMode"><option value="last">마지막 통과 1등</option><option value="first">먼저 통과 1등</option></select></label><label class="pinball-speed">속도 <select id="pinballSpeed"><option value="1">보통</option><option value="1.6">빠르게</option><option value="2.4">매우 빠르게</option></select></label></div><p class="weird-result" id="pinballResult" aria-live="polite">먼저 / 마지막 통과 우승 기준을 선택해 봐! 🏆</p><p class="info">🌀 출구를 가로막는 회전봉과 가로로 나란히 배치된 회전 장애물 3개이 있어요. 우승 기준을 먼저/마지막 통과 중 선택할 수 있어요. 🎱 원형룰렛의 메뉴 티켓 수 = 투입되는 공 개수입니다. 당첨자를 미리 정하지 않아요. 실제 움직임과 장애물 충돌에 따라 선택한 통과 순서의 공이 당첨됩니다. 코스 특성상 공 개수에 정확히 비례하는 확률을 보장하지 않습니다.</p></section><section class="panel"><h2>🏁 메뉴별 남은 공</h2><div id="pinballBoard" class="pinball-board"></div><p class="info">공이 많으면 화면이 복잡해질 수 있어요. 브라우저 성능을 위해 한 경기 최대 200개 공까지 투입됩니다. 메뉴 설정은 변경되지 않습니다.</p></section><section class="panel pinball-menu-panel"><div class="heading"><h2>🎱 핀볼 메뉴 관리</h2><button class="secondary" id="pinballClearAll" type="button">🗑 전체 메뉴 삭제</button></div><p class="info">원형룰렛과 같은 메뉴 목록을 사용해요. 티켓 1장 = 핀볼 공 1개예요. 여기서 추가하거나 삭제한 메뉴는 원형룰렛·경마·쿠지판에도 반영돼요.</p><div class="bulk-add"><h3>📋 여러 메뉴 한 번에 추가</h3><p class="bulk-hint">한 줄에 하나씩 입력하거나 쉼표(,)로 구분해 붙여넣으세요.<br>예: <b>신라면 x2</b> / <b>불닭볶음면 x5</b> / <b>짜파게티</b><br>같은 이름은 합산되며 ×숫자가 없으면 1개씩 추가돼요.</p><textarea id="pinballBulkInput" placeholder="신라면 x2&#10;불닭볶음면 x5&#10;짜파게티" aria-label="핀볼 메뉴 여러 개 입력"></textarea><div class="bulk-controls"><button class="secondary" id="pinballBulkAdd" type="button">📥 전체 항목 한 번에 추가</button><button class="secondary" id="pinballBulkClear" type="button">입력창 비우기</button><span id="pinballBulkPreview" class="bulk-preview" aria-live="polite">여러 줄을 붙여넣어 보세요.</span></div><div id="pinballBulkError" class="bulk-error" role="status"></div></div><div class="weird-stats" id="pinballMenuStats"></div><div class="weird-entries" id="pinballMenuEntries"></div><p class="info" id="pinballMenuNotice" role="status"></p></section></div><div class="mode-page" id="ladderPage" hidden>
 <div class="ladder-intro"><img src="myao-2.webp" alt="먀오"><div><strong>🪜 먀오의 사다리타기</strong><p>참가자와 결과를 직접 입력하고, 비밀 결과를 사다리로 뽑아봐! ♡</p></div></div>
 <section class="panel ladder-layout"><div class="ladder-inputs"><label for="ladderNames">🐾 참가자 (한 줄에 한 명)<textarea id="ladderNames" spellcheck="false" placeholder="먀오&#10;시청자1&#10;시청자2&#10;시청자3&#10;시청자4"></textarea></label><label for="ladderPrizes">🎁 결과 (한 줄에 하나, 중복 가능)<textarea id="ladderPrizes" spellcheck="false" placeholder="당첨&#10;꽝&#10;꽝&#10;벌칙&#10;면제"></textarea></label></div>
 <p class="ladder-hint">참가자와 결과는 같은 개수로 입력해 줘. 2~50명까지 가능하고, 입력한 내용은 자동 저장돼. 사다리 선과 결과는 출발 전까지 숨겨져 있어.</p>
@@ -70,9 +73,9 @@ const icons={한식:'🍚',분식:'🍜',중식:'🥟',일식:'🍣',양식:'�
 (function(){
 'use strict';
 const foodTab=document.getElementById('tabFood'),weirdTab=document.getElementById('tabWeird');
-const foodPage=document.getElementById('foodPage'),weirdPage=document.getElementById('weirdPage'),raceTab=document.getElementById('tabRace'),racePage=document.getElementById('racePage'),kujiTab=document.getElementById('tabKuji'),kujiPage=document.getElementById('kujiPage'),ladderTab=document.getElementById('tabLadder'),ladderPage=document.getElementById('ladderPage');
-function switchTab(which){const pages={food:foodPage,weird:weirdPage,race:racePage,kuji:kujiPage,ladder:ladderPage},tabs={food:foodTab,weird:weirdTab,race:raceTab,kuji:kujiTab,ladder:ladderTab};for(const [name,page] of Object.entries(pages)){page.hidden=name!==which;tabs[name].classList.toggle('active',name===which);tabs[name].setAttribute('aria-selected',String(name===which));}if(which==='race')window.raceRefresh?.();if(which==='kuji')window.kujiRefresh?.();if(which==='weird')draw();}
-foodTab.onclick=()=>switchTab('food');weirdTab.onclick=()=>switchTab('weird');raceTab.onclick=()=>switchTab('race');kujiTab.onclick=()=>switchTab('kuji');ladderTab.onclick=()=>switchTab('ladder');document.getElementById('raceGoWeird').onclick=()=>switchTab('weird');
+const foodPage=document.getElementById('foodPage'),weirdPage=document.getElementById('weirdPage'),raceTab=document.getElementById('tabRace'),racePage=document.getElementById('racePage'),kujiTab=document.getElementById('tabKuji'),kujiPage=document.getElementById('kujiPage'),ladderTab=document.getElementById('tabLadder'),ladderPage=document.getElementById('ladderPage'),pinballTab=document.getElementById('tabPinball'),pinballPage=document.getElementById('pinballPage');
+function switchTab(which){const pages={food:foodPage,weird:weirdPage,race:racePage,kuji:kujiPage,ladder:ladderPage,pinball:pinballPage},tabs={food:foodTab,weird:weirdTab,race:raceTab,kuji:kujiTab,ladder:ladderTab,pinball:pinballTab};for(const [name,page] of Object.entries(pages)){page.hidden=name!==which;tabs[name].classList.toggle('active',name===which);tabs[name].setAttribute('aria-selected',String(name===which));}if(which==='race')window.raceRefresh?.();if(which==='kuji')window.kujiRefresh?.();if(which==='pinball')window.pinballRefresh?.();if(which==='weird')draw();}
+foodTab.onclick=()=>switchTab('food');weirdTab.onclick=()=>switchTab('weird');raceTab.onclick=()=>switchTab('race');kujiTab.onclick=()=>switchTab('kuji');ladderTab.onclick=()=>switchTab('ladder');pinballTab.onclick=()=>switchTab('pinball');document.getElementById('raceGoWeird').onclick=()=>switchTab('weird');
 const key='myao-weird-food-wheel-v1';let entries=[];
 try{const old=JSON.parse(localStorage.getItem(key));if(Array.isArray(old))entries=old.filter(x=>x&&typeof x.name==='string'&&Number.isSafeInteger(x.tickets)&&x.tickets>0).map(x=>({name:x.name.slice(0,45),tickets:x.tickets}));}catch{}
 const el=id=>document.getElementById(id),canvas=el('weirdCanvas'),ctx=canvas.getContext('2d');
@@ -82,7 +85,41 @@ const total=()=>entries.reduce((a,x)=>a+x.tickets,0);
 function save(){try{localStorage.setItem(key,JSON.stringify(entries));}catch{el('weirdNotice').textContent='브라우저 저장에 실패했어요.'}}
 function draw(){const w=canvas.width,h=canvas.height,cx=w/2,cy=h/2,r=w*.455;ctx.clearRect(0,0,w,h);const sum=total();if(!sum){ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fillStyle='#f8e5ec';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=9;ctx.stroke();ctx.fillStyle='#ad6683';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='bold 31px sans-serif';ctx.fillText('메뉴를 추가해줘! ♡',cx,cy-65);return;}
 let start=angle-Math.PI/2;entries.forEach((e,i)=>{const span=e.tickets/sum*Math.PI*2,end=start+span;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,start,end);ctx.closePath();ctx.fillStyle=colors[i%colors.length];ctx.fill();ctx.strokeStyle='#fff9';ctx.lineWidth=2.5;ctx.stroke();if(span>.10){const mid=(start+end)/2;ctx.save();ctx.translate(cx+Math.cos(mid)*r*.66,cy+Math.sin(mid)*r*.66);let rot=mid+Math.PI/2;if(Math.cos(mid)<0)rot+=Math.PI;ctx.rotate(rot);ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#4c3040';ctx.font='bold 23px sans-serif';const label=e.name.length>11?e.name.slice(0,10)+'…':e.name;ctx.fillText(label,0,0,Math.max(20,r*.65));if(span>.23){ctx.font='18px sans-serif';ctx.fillText((e.tickets/sum*100).toFixed(1)+'%',0,27)}ctx.restore();}start=end;});ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle='#fff';ctx.lineWidth=8;ctx.stroke();}
-function render(){const sum=total();el('weirdStats').textContent=`등록 메뉴 ${entries.length}개 · 전체 티켓 ${sum.toLocaleString()}장`;el('weirdPoolInfo').textContent=`${entries.length}개 메뉴 중 추첨 · 총 ${sum.toLocaleString()}장`;el('weirdSpin').disabled=spinning||!sum;el('weirdEntries').replaceChildren();if(!entries.length){const p=document.createElement('div');p.className='weird-empty';p.textContent='아직 등록된 메뉴가 없어요. 위에서 추가해 봐!';el('weirdEntries').append(p);}entries.forEach((e,i)=>{const row=document.createElement('div');row.className='weird-entry';const name=document.createElement('span');name.className='entry-name';name.textContent=e.name;const qty=document.createElement('span');qty.className='qty';qty.textContent=e.tickets+'장';const pct=document.createElement('small');pct.textContent=(e.tickets/sum*100).toFixed(2)+'%';const plus=document.createElement('button');plus.type='button';plus.textContent='+1';plus.title='티켓 1장 추가';plus.disabled=spinning||e.tickets>=100000;plus.onclick=()=>{entries[i].tickets++;save();render()};const minus=document.createElement('button');minus.type='button';minus.textContent='−1';minus.title='티켓 1장 감소';minus.disabled=spinning;minus.onclick=()=>{if(entries[i].tickets<=1)entries.splice(i,1);else entries[i].tickets--;save();render()};const del=document.createElement('button');del.type='button';del.textContent='×';del.title='메뉴 전체 삭제';del.disabled=spinning;del.onclick=()=>{entries.splice(i,1);save();render()};row.append(name,qty,pct,plus,minus,del);el('weirdEntries').append(row)});draw();}
+
+function syncPinballMenu(){
+ const $=id=>document.getElementById(id);
+ const original=$('weirdEntries'), mirror=$('pinballMenuEntries');
+ if(!mirror||!original)return;
+ $('pinballMenuStats').textContent=$('weirdStats').textContent;
+ mirror.replaceChildren();
+ [...original.children].forEach((row,index)=>{
+   const copy=row.cloneNode(true);
+   const sourceButtons=[...row.querySelectorAll('button')];
+   [...copy.querySelectorAll('button')].forEach((btn,i)=>{btn.onclick=()=>sourceButtons[i]?.click();});
+   mirror.append(copy);
+ });
+}
+(function setupPinballMenu(){
+ const $=id=>document.getElementById(id),input=$('pinballBulkInput'),origin=$('weirdBulkInput');
+ if(!input)return;
+ input.addEventListener('input',()=>{
+   origin.value=input.value;origin.dispatchEvent(new Event('input',{bubbles:true}));
+   $('pinballBulkPreview').textContent=$('weirdBulkPreview').textContent;
+   $('pinballBulkError').textContent='';
+ });
+ $('pinballBulkAdd').addEventListener('click',()=>{
+   origin.value=input.value;origin.dispatchEvent(new Event('input',{bubbles:true}));
+   $('weirdBulkAdd').click();
+   $('pinballBulkError').textContent=$('weirdBulkError').textContent;
+   $('pinballMenuNotice').textContent=$('weirdNotice').textContent;
+   input.value=origin.value;
+   input.dispatchEvent(new Event('input'));
+ });
+ $('pinballBulkClear').addEventListener('click',()=>{input.value='';input.dispatchEvent(new Event('input'));});
+ $('pinballClearAll').addEventListener('click',()=>{$('weirdClearAll').click();$('pinballMenuNotice').textContent=$('weirdNotice').textContent;});
+})();
+
+function render(){const sum=total();el('weirdStats').textContent=`등록 메뉴 ${entries.length}개 · 전체 티켓 ${sum.toLocaleString()}장`;el('weirdPoolInfo').textContent=`${entries.length}개 메뉴 중 추첨 · 총 ${sum.toLocaleString()}장`;el('weirdSpin').disabled=spinning||!sum;el('weirdEntries').replaceChildren();if(!entries.length){const p=document.createElement('div');p.className='weird-empty';p.textContent='아직 등록된 메뉴가 없어요. 위에서 추가해 봐!';el('weirdEntries').append(p);}entries.forEach((e,i)=>{const row=document.createElement('div');row.className='weird-entry';const name=document.createElement('span');name.className='entry-name';name.textContent=e.name;const qty=document.createElement('span');qty.className='qty';qty.textContent=e.tickets+'장';const pct=document.createElement('small');pct.textContent=(e.tickets/sum*100).toFixed(2)+'%';const plus=document.createElement('button');plus.type='button';plus.textContent='+1';plus.title='티켓 1장 추가';plus.disabled=spinning||e.tickets>=100000;plus.onclick=()=>{entries[i].tickets++;save();render()};const minus=document.createElement('button');minus.type='button';minus.textContent='−1';minus.title='티켓 1장 감소';minus.disabled=spinning;minus.onclick=()=>{if(entries[i].tickets<=1)entries.splice(i,1);else entries[i].tickets--;save();render()};const del=document.createElement('button');del.type='button';del.textContent='×';del.title='메뉴 전체 삭제';del.disabled=spinning;del.onclick=()=>{entries.splice(i,1);save();render()};row.append(name,qty,pct,plus,minus,del);el('weirdEntries').append(row)});draw();syncPinballMenu();}
 function bulkParse(){
  const text=el('weirdBulkInput').value;const chunks=text.split(/[,\n\r]+/).map(v=>v.trim()).filter(Boolean);
  const combined=new Map(), errors=[];
@@ -251,5 +288,179 @@ $('ladderBuild').addEventListener('click',create);$('ladderShuffle').addEventLis
 $('ladderReveal').addEventListener('click',()=>{if(!names.length){msg('먼저 사다리를 생성해 줘!');return}stop();ladderVisible=true;for(let i=0;i<names.length;i++)revealed.set(i,true);render();msg('👀 모든 결과를 공개했어!')});
 $('ladderReset').addEventListener('click',()=>{stop();revealed.clear();ladderVisible=false;render();msg('🔒 사다리 선과 결과를 숨겼어. 참가자를 선택하면 공개돼!')});
 create();
+})();
+
+/* MEOW marble drop: procedural zigzag chute, realtime ranking and last-ball winner. */
+(function(){
+'use strict';
+const $=id=>document.getElementById(id),cv=$('pinballCanvas'),ctx=cv.getContext('2d'),W=1000,H=760;
+const KEY='myao-weird-food-wheel-v1',colors=['#ff71b4','#6de5f3','#ffca68','#ab8bff','#8aefa8','#ff9c77','#ff8be9','#a4b9ff','#e5e777','#ffb7c9'];
+const rand=(a,b)=>a+Math.random()*(b-a),clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const COURSE=2150,LEFT=85,RIGHT=580,VIEW_TOP=94,VIEW_BOT=711;
+const mini=$('pinballMini'),mc=mini.getContext('2d');let autoCamera=true;
+let entries=[],balls=[],pegs=[],bumpers=[],gates=[],segments=[],finalSpinner=null,running=false,raf=0,last=0,t=0,camera=0,winner=null,finished=[],maxBalls=120;
+function data(){try{const a=JSON.parse(localStorage.getItem(KEY));return Array.isArray(a)?a.filter(x=>x&&x.name&&Number(x.tickets)>0):[]}catch{return []}}
+function text(str,x,y,size=15,color='#fff',align='center'){ctx.font=`800 ${size}px system-ui,sans-serif`;ctx.textAlign=align;ctx.textBaseline='middle';ctx.fillStyle=color;ctx.fillText(str,x,y)}
+function box(x,y,w,h,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
+function center(y){let k=0;for(let s of segments){if(y>=s.y)k=s.x;else break}let i=segments.findIndex(s=>s.y>y);if(i<1)return segments[0].x;let a=segments[i-1],b=segments[i];let u=clamp((y-a.y)/(b.y-a.y),0,1);u=u*u*(3-2*u);return a.x+(b.x-a.x)*u}
+function width(y){return y<145?66:y>COURSE-315&&y<COURSE-80?108:y>COURSE-80?56:Math.abs(y-950)<115?118:randWidth(y)}
+function randWidth(y){return 67+8*Math.sin(y*.004+1.4)}
+function build(){
+// Clean curved chute with staggered peg clusters and a three-across spinner challenge.
+const flip=Math.random()<.5?1:-1;
+segments=[{y:0,x:330},{y:175,x:330},{y:390,x:330+flip*62},{y:660,x:330+flip*62},{y:910,x:330-flip*50},{y:1160,x:330-flip*50},{y:1410,x:330+flip*35},{y:1650,x:330},{y:COURSE,x:330}];
+pegs=[];bumpers=[];gates=[];
+// Three uncluttered peg zones; different offsets each round.
+for(const base of [460,1180,1590]){
+ const drift=rand(-8,8);
+ for(let row=0;row<3;row++)for(let col=-1;col<=1;col++){
+  let y=base+row*34, x=center(y)+col*37+(row%2?15:-9)+drift;
+  pegs.push({x,y,r:5.5});
+ }
+}
+// Three small paddles in ONE horizontal row (ㅁ ㅁ ㅁ), each spinning independently.
+// The course widens locally so the three paddles have their own lanes.
+const gy=950, mid=center(gy);
+for(const offset of [-62,0,62]){
+ gates.push({x:mid+offset,y:gy,len:rand(17,22),phase:rand(0,6.28),spin:(Math.random()<.5?-1:1)*rand(1.5,2.9)});
+}
+const fy=COURSE-64;
+
+finalSpinner={x:330,y:fy,len:56,phase:rand(0,6.28),spin:2.35};
+}
+function board(){const alive=balls.filter(b=>!b.out),m=new Map();for(let b of alive)m.set(b.name,(m.get(b.name)||0)+1);$('pinballBoard').replaceChildren();for(let e of entries){let el=document.createElement('span');el.className='pinball-chip';el.textContent=e.name+' ';let n=document.createElement('b');n.textContent=(m.get(e.name)||0)+'개';el.append(n);$('pinballBoard').append(el)}$('pinballInfo').textContent=`🎱 생존 ${alive.length} / ${balls.length}개 · 통과 ${finished.length}개`}
+function reset(){autoCamera=true;updateCameraButton();cancelAnimationFrame(raf);running=false;balls=[];finished=[];winner=null;t=0;camera=0;entries=data();build();$('pinballStart').disabled=false;$('pinballStatus').textContent='READY';$('pinballResult').textContent='🏁 출구 회전봉에서 순서가 바뀔 수 있어! 우승 기준을 골라 줘.';board();draw()}
+function start(){reset();if(!entries.length){$('pinballResult').textContent='원형룰렛에서 메뉴를 먼저 등록해 줘!';return}let list=[];for(let e of entries)for(let i=0;i<Math.min(2000,Math.floor(Number(e.tickets)));i++)list.push(e);for(let i=list.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[list[i],list[j]]=[list[j],list[i]]}list=list.slice(0,maxBalls);balls=list.map((e,i)=>({name:e.name,color:colors[entries.indexOf(e)%colors.length],x:330+rand(-36,36),y:-10-Math.floor(i/8)*16-rand(0,14),vx:rand(-1.2,1.2),vy:rand(.4,1.5),r:list.length>70?5:7,out:false,id:i,stall:0}));running=true;last=performance.now();$('pinballStart').disabled=true;$('pinballStatus').textContent='🔴 LIVE';board();if(balls.length===1){balls[0].out=true;finished.push(balls[0]);winner=balls[0];running=false;$('pinballStart').disabled=false;$('pinballStatus').textContent='🏆 FINISH';$('pinballResult').textContent='🏆 '+winner.name+' 당첨! 마지막 한 공이야!';board();draw();return}raf=requestAnimationFrame(tick)}
+function hit(b,x,y,r){let dx=b.x-x,dy=b.y-y,d=Math.hypot(dx,dy)||.001,lim=b.r+r;if(d>=lim)return;let nx=dx/d,ny=dy/d;b.x=x+nx*(lim+.15);b.y=y+ny*(lim+.15);let v=b.vx*nx+b.vy*ny;if(v<0){b.vx-=1.65*v*nx;b.vy-=1.65*v*ny}b.vx+=rand(-.38,.38)}
+function hitBar(b,p,ang,reach,power=1){
+ let ux=Math.cos(ang),uy=Math.sin(ang),dx=b.x-p.x,dy=b.y-p.y;
+ let along=clamp(dx*ux+dy*uy,-reach,reach),px=p.x+ux*along,py=p.y+uy*along;
+ let d=Math.hypot(b.x-px,b.y-py),limit=b.r+7;
+ if(d>=limit)return false;
+ let nx=(b.x-px)/(d||1),ny=(b.y-py)/(d||1);
+ b.x=px+nx*(limit+.6);b.y=py+ny*(limit+.6);
+ let inward=b.vx*nx+b.vy*ny;
+ if(inward<0){b.vx-=1.7*inward*nx;b.vy-=1.7*inward*ny}
+ let tangential=along/reach;
+ b.vx+=(-uy*power*(1.8+Math.abs(tangential)*1.4))+nx*.45;
+ b.vy+=(ux*power*(1.8+Math.abs(tangential)*1.4))+ny*.45;
+ b.vx=clamp(b.vx,-8,8);b.vy=clamp(b.vy,-5.5,10);
+ return true;
+}
+
+function finishIfDecided(){
+ if(!running||!balls.length)return false;
+ const alive=balls.filter(b=>!b.out);
+ if(alive.length>1)return false;
+ if(alive.length===1){
+  const lastBall=alive[0];lastBall.out=true;finished.push(lastBall);
+ }
+ if(!finished.length)return false;
+ winner=$('pinballWinMode').value==='first'?finished[0]:finished[finished.length-1];
+ running=false;cancelAnimationFrame(raf);$('pinballStart').disabled=false;
+ $('pinballStatus').textContent='🏆 FINISH';
+ $('pinballResult').textContent='🏆 '+winner.name+' 당첨! '+($('pinballWinMode').value==='first'?'가장 먼저 통과한':'마지막까지 남은')+' 공이야!';
+ board();return true;
+}
+function step(dt){t+=dt/60;const alive=balls.filter(b=>!b.out);for(let b of alive){b.vy=clamp(b.vy+.16*dt,-3,8.8);b.vx=clamp((b.vx+rand(-.095,.095)*dt)*.995,-5.5,5.5);b.x+=b.vx*dt;b.y+=b.vy*dt;let mid=center(clamp(b.y,0,COURSE)),half=width(clamp(b.y,0,COURSE));let lo=mid-half+b.r,hi=mid+half-b.r;if(b.x<lo){b.x=lo;b.vx=Math.abs(b.vx)*.76+rand(.12,.5);b.vy*=.95}if(b.x>hi){b.x=hi;b.vx=-Math.abs(b.vx)*.76-rand(.12,.5);b.vy*=.95}
+for(let p of pegs)if(Math.abs(p.y-b.y)<25&&Math.abs(p.x-b.x)<25)hit(b,p.x,p.y,p.r);
+for(let p of bumpers)if(Math.abs(p.y-b.y)<43&&Math.abs(p.x-b.x)<43){let xx=p.x+Math.sin(t*p.spin+p.phase)*13;hit(b,xx,p.y,p.r);b.vx+=Math.sin(t*p.spin+p.phase)*.6}
+for(let p of gates)if(Math.abs(p.y-b.y)<75&&Math.abs(p.x-b.x)<75){let a=t*p.spin+p.phase;if(hitBar(b,p,a,p.len,1.1)){
+  // A small randomized upward kick makes the middle paddles delay some marbles.
+  if(Math.random()<.34){b.vy=-rand(2.6,5.2);b.vx+=rand(-1.6,1.6)}
+ }}
+// Final rotating sweep: strong side-to-side reversals even near the finish.
+if(finalSpinner&&Math.abs(b.y-finalSpinner.y)<105){
+ hitBar(b,finalSpinner,t*finalSpinner.spin+finalSpinner.phase,finalSpinner.len,2.05);
+ // Wide finale chamber gives balls room to overtake each other.
+ b.vx+=Math.sin(t*2.1+b.id)*.055*dt;
+ // The spinning bar physically blocks the narrow exit: marbles must find an opening.
+ if(b.y>COURSE-27 && b.y<COURSE+9){
+  let a=t*finalSpinner.spin+finalSpinner.phase;
+  let blocking=Math.abs(Math.cos(a))>.38;
+  if(blocking && Math.abs(b.x-finalSpinner.x)<52){
+   b.y=Math.min(b.y,COURSE-29);b.vy=-Math.abs(b.vy)*.72-1.2;
+   b.vx+=Math.sin(a)*2.8+rand(-.7,.7);
+  }
+ }
+}
+if(b.vy<.5)b.stall+=dt;else b.stall=Math.max(0,b.stall-dt);if(b.stall>90){b.vy+=2.6;b.vx+=rand(-2,2);b.stall=0}
+if(b.y>=COURSE){b.out=true;finished.push(b);finishIfDecided();}
+}
+finishIfDecided();
+for(let i=0;i<alive.length;i++)for(let j=i+1;j<alive.length;j++){let a=alive[i],b=alive[j];if(a.out||b.out||Math.abs(a.x-b.x)>17||Math.abs(a.y-b.y)>17)continue;let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||.001,lim=a.r+b.r;if(d>=lim)continue;let nx=dx/d,ny=dy/d,ov=(lim-d)*.5;a.x-=nx*ov;b.x+=nx*ov;a.y-=ny*ov;b.y+=ny*ov;let v=(b.vx-a.vx)*nx+(b.vy-a.vy)*ny;if(v<0){let f=-v*.73;a.vx-=f*nx;b.vx+=f*nx;a.vy-=f*ny;b.vy+=f*ny}}
+}
+function tick(now){
+ let elapsed=Math.min(45,now-last);last=now;
+ const speed=Number($('pinballSpeed').value)||1;
+ let alive=balls.filter(b=>!b.out);
+ // Slow motion kicks in as the field narrows; final two marbles move slowest.
+ const slow=balls.length>5?(alive.length<=2?.48:alive.length<=3?.60:alive.length<=5?.77:1):
+   (balls.length>2&&alive.length<=2?.62:1);
+ const n=Math.max(1,Math.min(8,Math.ceil(elapsed*speed/12)));
+ for(let i=0;i<n&&running;i++)step(elapsed*speed*slow/n/16);
+ alive=balls.filter(b=>!b.out);
+ if(alive.length&&autoCamera){
+  // Follow the lowest surviving marble(s), especially in the final stretch.
+  // Their positions determine the next exit, not the median of the pack.
+  const ys=alive.map(b=>b.y).sort((a,b)=>b-a);
+  // Track the lowest surviving marble, not the average or the leader group.
+  // Keep it near the center of the visible playfield so the exit and spinner stay visible.
+  const focus=ys[0];
+  const target=clamp(focus-(alive.length<=5?310:345),0,COURSE-550);
+  camera+=(target-camera)*Math.min(1,elapsed*(alive.length<=5?.014:.009));
+ }
+ if(Math.floor(now/200)!==Math.floor((now-elapsed)/200))board();
+ draw();if(running)raf=requestAnimationFrame(tick);
+}
+function updateCameraButton(){$('pinballAutoCamera').textContent=autoCamera?'🎥 자동 추적 켜짐':'🎥 자동 추적 복귀'}
+$('pinballAutoCamera').onclick=()=>{autoCamera=true;updateCameraButton()};
+mini.addEventListener('pointerdown',e=>{const r=mini.getBoundingClientRect();const pos=clamp((e.clientY-r.top)/r.height,0,1);camera=clamp(pos*COURSE-310,0,COURSE-550);autoCamera=false;updateCameraButton();draw()});
+function drawMini(){const mw=mini.width,mh=mini.height,sy=y=>12+y/COURSE*(mh-24),sx=x=>mw/2+(x-330)*.46;
+ mc.clearRect(0,0,mw,mh);mc.fillStyle='#0d1424';mc.fillRect(0,0,mw,mh);
+ mc.beginPath();for(let y=0;y<=COURSE;y+=12){let x=sx(center(y)-width(y)),py=sy(y);y===0?mc.moveTo(x,py):mc.lineTo(x,py)}for(let y=COURSE;y>=0;y-=12)mc.lineTo(sx(center(y)+width(y)),sy(y));mc.closePath();mc.fillStyle='#364151';mc.fill();mc.strokeStyle='#8fc6d8';mc.lineWidth=2;mc.stroke();
+ for(const p of pegs){mc.fillStyle='#47e1e8';mc.fillRect(sx(p.x)-1.5,sy(p.y)-1.5,3,3)}
+ for(const p of gates){mc.strokeStyle='#66d7ff';mc.lineWidth=3;mc.beginPath();mc.moveTo(sx(p.x-p.len),sy(p.y));mc.lineTo(sx(p.x+p.len),sy(p.y));mc.stroke()}
+ if(finalSpinner){mc.strokeStyle='#ffae60';mc.lineWidth=4;mc.beginPath();mc.moveTo(sx(finalSpinner.x-finalSpinner.len),sy(finalSpinner.y));mc.lineTo(sx(finalSpinner.x+finalSpinner.len),sy(finalSpinner.y));mc.stroke()}
+ for(const b of balls){if(b.out)continue;mc.beginPath();mc.arc(sx(b.x),sy(clamp(b.y,0,COURSE)),3,0,Math.PI*2);mc.fillStyle=b.color;mc.fill()}
+ const top=sy(camera),bot=sy(Math.min(COURSE,camera+632));mc.strokeStyle='#ffef82';mc.lineWidth=3;mc.strokeRect(3,top,mw-6,Math.max(7,bot-top));
+ mc.font='bold 12px sans-serif';mc.fillStyle='#fff';mc.fillText('START',6,11);mc.fillText('FINISH',6,mh-3);
+}
+function draw(){drawMini();let bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#121224');bg.addColorStop(1,'#22243d');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);text('🎱 MEOW MARBLE DROP',500,31,24,'#ffe0f3');text('낙하 코스 · 3연속 회전 장애물 · 출구 회전봉',500,62,13,'#c9d6ed');box(45,87,610,641,16,'#080f19');box(675,87,288,641,16,'#1d1c32');text('🏁 통과 순서',819,119,21,'#ffe4a9');text('통과한 공은 순서 고정!',819,149,13,'#b9b9da');
+ctx.save();ctx.beginPath();ctx.rect(49,90,602,632);ctx.clip();ctx.translate(0,VIEW_TOP-camera);let pts=[];for(let y=-10;y<=COURSE+10;y+=10){pts.push({y,l:center(clamp(y,0,COURSE))-width(clamp(y,0,COURSE)),r:center(clamp(y,0,COURSE))+width(clamp(y,0,COURSE))})}ctx.fillStyle='#252a32';ctx.beginPath();ctx.moveTo(pts[0].l,pts[0].y);for(let p of pts)ctx.lineTo(p.l,p.y);for(let i=pts.length-1;i>=0;i--)ctx.lineTo(pts[i].r,pts[i].y);ctx.closePath();ctx.fill();for(let side of ['l','r']){ctx.beginPath();for(let i=0;i<pts.length;i++){let p=pts[i];i?ctx.lineTo(p[side],p.y):ctx.moveTo(p[side],p.y)}ctx.strokeStyle='#c6d6e6';ctx.lineWidth=4;ctx.shadowColor='#d2f3ff';ctx.shadowBlur=7;ctx.stroke();ctx.shadowBlur=0}
+for(let p of pegs){if(p.y<camera-30||p.y>camera+660)continue;ctx.fillStyle='#2ce5ec';ctx.shadowColor='#1deaf7';ctx.shadowBlur=10;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();ctx.shadowBlur=0}
+for(let p of bumpers){if(p.y<camera-50||p.y>camera+680)continue;let x=p.x+Math.sin(t*p.spin+p.phase)*13;ctx.strokeStyle='#ffb2d6';ctx.lineWidth=4;ctx.beginPath();ctx.arc(x,p.y,p.r,0,7);ctx.stroke();ctx.fillStyle='#ff82b9';ctx.beginPath();ctx.arc(x,p.y,5,0,7);ctx.fill()}
+for(let p of gates){if(p.y<camera-80||p.y>camera+680)continue;let a=t*p.spin+p.phase;ctx.strokeStyle='#55d5ff';ctx.lineWidth=7;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(p.x-Math.cos(a)*p.len,p.y-Math.sin(a)*p.len);ctx.lineTo(p.x+Math.cos(a)*p.len,p.y+Math.sin(a)*p.len);ctx.stroke()}
+if(finalSpinner&&finalSpinner.y>camera-90&&finalSpinner.y<camera+720){
+let a=t*finalSpinner.spin+finalSpinner.phase;
+ctx.save();ctx.translate(finalSpinner.x,finalSpinner.y);ctx.rotate(a);
+ctx.strokeStyle='#ff9a4e';ctx.shadowColor='#ff7e35';ctx.shadowBlur=16;ctx.lineWidth=12;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-finalSpinner.len,0);ctx.lineTo(finalSpinner.len,0);ctx.stroke();ctx.shadowBlur=0;ctx.fillStyle='#fff4bd';ctx.beginPath();ctx.arc(0,0,11,0,7);ctx.fill();ctx.restore();
+text('⚡ EXIT SPINNER',finalSpinner.x,finalSpinner.y-112,16,'#ffe29b');}
+ctx.strokeStyle='#ffe28a';ctx.lineWidth=5;ctx.setLineDash([10,8]);ctx.beginPath();ctx.moveTo(266,COURSE);ctx.lineTo(394,COURSE);ctx.stroke();ctx.setLineDash([]);
+let vis=balls.filter(b=>!b.out&&b.y>=camera-30&&b.y<=camera+650);for(let b of vis){ctx.fillStyle=b.color;ctx.shadowColor=b.color;ctx.shadowBlur=9;ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,7);ctx.fill();ctx.shadowBlur=0;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(b.x-2,b.y-2,Math.max(1.6,b.r*.35),0,7);ctx.fill()}
+// Always label all marbles in small races, no size-dependent omission.
+let show=vis.length<=22?vis:vis.filter((b,i)=>(i+Math.floor(t*3))%Math.ceil(vis.length/22)===0);for(let b of show){let name=b.name.length>10?b.name.slice(0,9)+'…':b.name;let w=clamp(name.length*11+18,44,125);box(clamp(b.x-w/2,90,540-w),b.y-27,w,19,6,'#090d1ee8');text(name,clamp(b.x,90+w/2,540-w/2),b.y-17,12,'#fff')}
+ctx.restore();
+let progress=running?Math.round((camera/(COURSE-550))*100):winner?100:0;text('코스 '+progress+'%',350,744,15,'#d1e9fa');
+let sorted=balls.filter(b=>!b.out).sort((a,b)=>b.y-a.y);
+let ranking=$('pinballWinMode').value==='first'?[...finished,...sorted]:[...finished].reverse().concat(sorted);
+let view=ranking.slice(0,15);
+if(!balls.length){text('시작하면 통과 순서가',819,325,18,'#eee');text('여기에 기록돼요!',819,356,18,'#eee')}
+else{let y=183;for(let i=0;i<view.length;i++){
+ let b=view[i],done=b.out;
+ box(690,y-13,256,29,7,done?'#365348':i%2?'#28273e':'#242339');
+ box(702,y-8,13,13,4,b.color);text(String(i+1),728,y,13,'#ffe9a7');
+ let nm=b.name.length>11?b.name.slice(0,10)+'…':b.name;
+ text(nm,749,y,13,'#fff','left');
+ let rank=finished.indexOf(b)+1;
+ text(done?('완주 '+rank):'진행 중',937,y,11,done?'#a8f1da':'#a8b4da','right');y+=34;
+}
+if(ranking.length>15)text('외 '+(ranking.length-15)+'개 공',819,730,12,'#d0c5eb');
+text('완주 '+finished.length+' / '+balls.length,819,705,15,'#a8f1da');
+}
+
+if(!running&&winner){box(113,350,470,75,13,'#1b1837f2');text('🏆 '+winner.name+' 당첨!',350,386,27,'#ffdf99')}
+}
+$('pinballWinMode').onchange=()=>{if(!running&&finished.length===balls.length&&winner){winner=$('pinballWinMode').value==='first'?finished[0]:finished[finished.length-1];$('pinballResult').textContent='🏆 '+winner.name+' 당첨!';}draw()};window.pinballRefresh=()=>{if(!running)reset()};$('pinballStart').onclick=start;$('pinballReset').onclick=reset;reset();
 })();
 </script></body></html>
